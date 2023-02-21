@@ -28,11 +28,11 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-L
     && /bin/bash ~/miniconda.sh -b -p /opt/conda
 # Put conda in path so we can use conda activate
 ENV PATH=$PATH:$CONDA_DIR/bin
-RUN conda create -n torch -y
 # activate conda env
-RUN conda init zsh
-RUN exec zsh
-RUN conda activate torch
+RUN conda init zsh && \
+    conda create -n torch -y && \
+    exec zsh && \
+    conda activate torch
 
 # Install python libs
 RUN pip install tqdm simpletransformers networkx pyelftools wandb pwntools ipython \
