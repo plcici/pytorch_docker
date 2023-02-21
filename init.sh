@@ -1,3 +1,3 @@
 #!/bin/bash
 service ssh start
-exec zsh
+exec zsh && conda activate torch
