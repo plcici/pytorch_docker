@@ -38,6 +38,8 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 RUN mkdir /workspace
 WORKDIR /workspace
 
+# set zsh as default shell
+RUN chsh -s /bin/zsh 
 
 # activate conda env
 RUN conda init zsh
