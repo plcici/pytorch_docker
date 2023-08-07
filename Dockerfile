@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.7.0-base-ubuntu20.04
+FROM nvidia/cuda:11.7.1-base-ubuntu20.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install some basic utilities.
