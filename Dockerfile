@@ -59,7 +59,7 @@ RUN pip install --pre dgl -f https://data.dgl.ai/wheels/cu117/repo.html \
     && pip install --pre dglgo -f https://data.dgl.ai/wheels-test/repo.html
 
 # Create a working directory.
-RUN mkdir /workspace
+RUN mkdir -p /workspace
 WORKDIR /workspace
 
 # init
