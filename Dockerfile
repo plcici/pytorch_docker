@@ -20,8 +20,8 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
  # Clone the defects4j repository and initialize it.
-RUN git clone https://github.com/rjust/defects4j.git /defects4j \
- && cd /defects4j \
+RUN git clone https://github.com/rjust/defects4j.git /workspace/defects4j \
+ && cd /workspace/defects4j \
  && cpanm --installdeps . \
  && ./init.sh
 
