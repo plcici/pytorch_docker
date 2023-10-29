@@ -10,7 +10,23 @@ RUN apt-get update && apt-get install -y \
     git \
     bzip2 \
     openssh-server \
-    vim
+    vim \
+    make \
+    build-essential \
+    tmux \
+    cpanminus \
+    subversion \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+ # Clone the defects4j repository and initialize it.
+RUN git clone https://github.com/rjust/defects4j.git /defects4j \
+ && cd /defects4j \
+ && cpanm --installdeps . \
+ && ./init.sh
+
+# Add defects4j/framework/bin to the PATH in .zshrc
+RUN echo 'export PATH=$PATH:/workspace/defects4j/framework/bin' >> ~/.zshrc
 
 # install zsh
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
