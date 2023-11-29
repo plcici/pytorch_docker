@@ -30,7 +30,7 @@ RUN git clone https://github.com/rjust/defects4j.git /package/defects4j \
 RUN echo 'export PATH=$PATH:/workspace/defects4j/framework/bin' >> ~/.zshrc
 
 # Install Java1.8
-RUN sudo apt-get install openjdk-8-jdk
+RUN apt-get install openjdk-8-jdk
 
 # install zsh
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
