@@ -27,7 +27,7 @@ RUN git clone https://github.com/rjust/defects4j.git /package/defects4j \
  && ./init.sh
 
 # Add defects4j/framework/bin to the PATH in .zshrc
-RUN echo 'export PATH=$PATH:/workspace/defects4j/framework/bin' >> ~/.zshrc
+RUN echo 'export PATH=$PATH:/package/defects4j/framework/bin' >> ~/.zshrc
 
 # Install Java1.8
 RUN apt-get update && \
